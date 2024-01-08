@@ -2,23 +2,22 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    /// <summary>Command to initiate the start of a new script task run with the same parameters as the previous run.</summary>
+    public Command ClickCommand { get; }
 
-	public MainPage()
+    public MainPage()
 	{
-		InitializeComponent();
+        ClickCommand = new(execute: () => {
+            DisplayAlert("Title", "Button 1 clicked", "Cancel");
+        });
+
+        InitializeComponent();
+		BindingContext = this;
 	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+    private void button2_Clicked(object sender, EventArgs e)
+    {
+        DisplayAlert("Title", "Button 2 clicked", "Cancel");
+    }
 }
 
