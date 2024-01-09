@@ -8,8 +8,8 @@
             Padding="30,0"
             Spacing="25">
 
-            <Button x:Name="button1" Style="{StaticResource PrimaryDialogButton}" Command="{Binding ClickCommand}" Text="Does not change background color on hover"/>
-            <Button x:Name="button2" Style="{StaticResource PrimaryDialogButton}" Clicked="button2_Clicked" Text="DOES change background color on pointer hover"/>
+            <Button x:Name="button2" Style="{StaticResource PrimaryDialogButton}" Text="DOES change background color on pointer hover"/>
+            <Button x:Name="button1" Style="{StaticResource PrimaryDialogButton}" Text="Does not change background color on hover"/>
             
         </VerticalStackLayout>
     </ScrollView>
